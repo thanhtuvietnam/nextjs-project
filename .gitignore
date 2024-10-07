@@ -35,3 +35,20 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+#prettier
+.prettierrc
+.prettierrc.json
+.prettierrc.js
+.prettierrc.cjs
+.prettierrc.toml
+.prettierrc.yaml
+.prettierrc.yml
+#eslint
+.eslintrc
+.eslintrc.json
+.eslintrc.js
+.eslintrc.cjs
+.eslintrc.toml
+.eslintrc.yaml
+.eslintrc.yml
+    

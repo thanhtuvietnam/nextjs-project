@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --yellow-500: #11e6ca;
+  --red-500: #44e4ef;
+  --blue-500: #e01082;
+  --cyan-500: #d406b8;
+  --violet-500: #ca5cf6;
+}
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
