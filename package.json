@@ -6,11 +6,16 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start ",
-    "lint": "next lint"
+    "lint": "next lint .",
+    "format": "prettier --write .",
+    "build-css": "sass src/app/styles/scss/globals.scss src/app/styles/css/globals.css"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "clsx": "^2.1.1",
+    "firebase": "^10.14.0",
     "next": "14.2.14",
+    "prop-types": "^15.8.1",
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^9.1.2"
@@ -18,7 +23,11 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "postcss": "^8",
+    "prettier": "^3.3.3",
+    "sass": "^1.79.4",
     "tailwindcss": "^3.4.1"
   }
 }

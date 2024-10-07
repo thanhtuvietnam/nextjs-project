@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"], // Thêm dòng này
+  "rules": {
+    "prettier/prettier": "error" // Bắt lỗi nếu mã không được định dạng đúng
+    // Các quy tắc khác của bạn
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tự động phát hiện phiên bản React
+    }
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/src/app/styles/css"
+    }
+  ],
+  "liveSassCompile.settings.includeItems": ["src/app/styles/scss/**/*.scss"],
+  "liveSassCompile.settings.excludeItems": ["src/app/styles/css/**/*.css"],
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.generateMap": false
+  //prettier
+  // "editor.formatOnSave": true,
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "prettier.singleQuote": true,
+  // "prettier.trailingComma": "es5",
+  // "prettier.tabWidth": 2,
+  // "prettier.useTabs": false,
+  // "prettier.semi": true,
+  // "prettier.bracketSpacing": true,
+  // "prettier.arrowParens": "avoid",
+  // "prettier.endOfLine": "lf"
+}
