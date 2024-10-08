@@ -5,15 +5,27 @@
 //dark mode
 $foreground-dark: #ebfaff;
 $background-dark: #030a1b;
-
 //light mode
 $foreground-light: #030a1b;
 $background-light: #ebfaff;
 
+:root {
+  // dark theme for text hover effect
+  --gradient-color-1-dark: #9ecdf4;
+  --gradient-color-2-dark: #00a7df;
+  --gradient-color-3-dark: #e01082;
+  --gradient-color-4-dark: #e5db22;
+  --gradient-color-5-dark: #e5228d;
+
+  //light theme for text hover effect
+  --gradient-color-1-light: #090f14;
+  --gradient-color-2-light: #14252b;
+  --gradient-color-3-light: #0cc2ff;
+  --gradient-color-4-light: #d0187d;
+  --gradient-color-5-light: #030a1b;
+}
 body {
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -22,9 +34,25 @@ body {
   &.dark-mode {
     background-color: $background-dark;
     color: $foreground-dark;
+    --gradient-color-1: var(--gradient-color-1-dark);
+    --gradient-color-2: var(--gradient-color-2-dark);
+    --gradient-color-3: var(--gradient-color-3-dark);
+    --gradient-color-4: var(--gradient-color-4-dark);
+    --gradient-color-5: var(--gradient-color-5-dark);
   }
   &.light-mode {
     background-color: $background-light;
     color: $foreground-light;
+    --gradient-color-1: var(--gradient-color-1-light);
+    --gradient-color-2: var(--gradient-color-2-light);
+    --gradient-color-3: var(--gradient-color-3-light);
+    --gradient-color-4: var(--gradient-color-4-light);
+    --gradient-color-5: var(--gradient-color-5-light);
   }
+}
+@mixin layout-arrange {
+  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
+}
+.layout-arrange {
+  @include layout-arrange;
 }

@@ -2,15 +2,15 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-export const TextHoverEffect = ({ text }) => {
+export const TextHoverEffect = ({ text, className }) => {
   const svgRef = useRef(null);
-  //   const [maskPosition, setMaskPosition] = useState({ cx: '50%', cy: '50%' });
+  // const iPosition = text.indexOf('i') / text.length;
   return (
     <svg
       ref={svgRef}
       width="100%"
       height="100%"
-      viewBox="0 0 200 50"
+      viewBox="0 0 180 50"
       xmlns="http://www.w3.org/2000/svg"
       className="select-none"
     >
@@ -20,14 +20,60 @@ export const TextHoverEffect = ({ text }) => {
           gradientUnits="userSpaceOnUse"
           x1="0%"
           y1="0%"
-          x2="100%"
+          x2="90%"
+          // x2="100%"
           y2="0%"
         >
-          <stop offset="0%" stopColor="var(--yellow-500)" />
-          <stop offset="25%" stopColor="var(--red-500)" />
-          <stop offset="50%" stopColor="var(--blue-500)" />
-          <stop offset="75%" stopColor="var(--cyan-500)" />
-          <stop offset="100%" stopColor="var(--violet-500)" />
+          {/* Màu 1: Vàng */}
+          <stop offset="0%" stopColor="var(--gradient-color-1)">
+            <animate
+              attributeName="offset"
+              values="-1;1;-1"
+              // values="-0.5;1.5;-0.5"
+              dur="5s" // Thời gian hoàn thành một chu kỳ animation
+              repeatCount="indefinite"
+            />
+          </stop>
+          {/* Màu 2: Đỏ */}
+          <stop offset="25%" stopColor="var(--gradient-color-2)">
+            <animate
+              attributeName="offset"
+              values="-0.75;1.25;-0.75"
+              // values="-0.25;1.75;-0.25"
+              dur="5s" // Thời gian hoàn thành một chu kỳ animation
+              repeatCount="indefinite"
+            />
+          </stop>
+          {/* Màu 3: Xanh dương */}
+          <stop offset="50%" stopColor="var(--gradient-color-3)">
+            <animate
+              attributeName="offset"
+              values="-0.5;1.5;-0.5"
+              // values="0;2;0"
+              dur="5s" // Thời gian hoàn thành một chu kỳ animation
+              repeatCount="indefinite"
+            />
+          </stop>
+          {/* Màu 4: Xanh lam */}
+          <stop offset="75%" stopColor="var(--gradient-color-4)">
+            <animate
+              attributeName="offset"
+              values="-0.25;1.75;-0.25"
+              // values="0.25;2.25;0.25"
+              dur="5s" // Thời gian hoàn thành một chu kỳ animation
+              repeatCount="indefinite"
+            />
+          </stop>
+          {/* Màu 5: Tím */}
+          <stop offset="100%" stopColor="var(--gradient-color-5)">
+            <animate
+              attributeName="offset"
+              values="0;2;0"
+              // values="0.5;2.5;0.5"
+              dur="5s" // Thời gian hoàn thành một chu kỳ animation
+              repeatCount="indefinite"
+            />
+          </stop>
         </linearGradient>
       </defs>
       <motion.text
@@ -36,7 +82,7 @@ export const TextHoverEffect = ({ text }) => {
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="font-bold text-3xl stroke-[#0cc2ff]"
+        className={className}
         initial={{
           strokeDashoffset: 1000,
           strokeDasharray: 1000,
@@ -67,4 +113,5 @@ export const TextHoverEffect = ({ text }) => {
 };
 TextHoverEffect.propTypes = {
   text: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
