@@ -1,50 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root {
-  --gradient-color-1-dark: #9ecdf4;
-  --gradient-color-2-dark: #00a7df;
-  --gradient-color-3-dark: #e01082;
-  --gradient-color-4-dark: #e5db22;
-  --gradient-color-5-dark: #e5228d;
-  --gradient-color-1-light: #090f14;
-  --gradient-color-2-light: #14252b;
-  --gradient-color-3-light: #0cc2ff;
-  --gradient-color-4-light: #d0187d;
-  --gradient-color-5-light: #030a1b;
-}
-
-body {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-body.dark-mode {
-  background-color: #030a1b;
-  color: #ebfaff;
-  --gradient-color-1: var(--gradient-color-1-dark);
-  --gradient-color-2: var(--gradient-color-2-dark);
-  --gradient-color-3: var(--gradient-color-3-dark);
-  --gradient-color-4: var(--gradient-color-4-dark);
-  --gradient-color-5: var(--gradient-color-5-dark);
-}
-body.light-mode {
-  background-color: #ebfaff;
-  color: #030a1b;
-  --gradient-color-1: var(--gradient-color-1-light);
-  --gradient-color-2: var(--gradient-color-2-light);
-  --gradient-color-3: var(--gradient-color-3-light);
-  --gradient-color-4: var(--gradient-color-4-light);
-  --gradient-color-5: var(--gradient-color-5-light);
-}
-
-.layout-arrange {
-  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
-}
-
 :root {
   --header-bg-color-1: rgba(1, 1, 1, 1) 27%;
   --header-bg-color-2: rgba(22, 2, 24, 1) 82%;
@@ -63,112 +16,34 @@ body.light-mode {
   position: relative;
 }
 .header-wrapper {
-  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
   width: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .header.dark-head {
-  background: radial-gradient(
-    circle,
-    var(--header-bg-color-1) 27%,
-    var(--header-bg-color-2) 82%,
-    var(--header-bg-color-3) 100%
-  );
+  background: radial-gradient(circle, var(--header-bg-color-1) 27%, var(--header-bg-color-2) 82%, var(--header-bg-color-3) 100%);
 }
 .header.light-head {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(var(--header-bg-color-4)),
-    to(var(--header-bg-color-5))
-  );
-  background: linear-gradient(
-    90deg,
-    var(--header-bg-color-4),
-    var(--header-bg-color-5)
-  );
+  background: linear-gradient(90deg, var(--header-bg-color-4), var(--header-bg-color-5));
 }
 .header-logo {
   position: relative;
   height: 100%;
 }
 .header-logo .line-effect {
+  @apply h-0.5 w-2/3 md:w-3/4 lg:w-5/6;
   position: absolute;
-  top: 90%;
+  top: 80%;
   left: 0;
-  width: 100%;
-  height: 2px;
-  -webkit-clip-path: polygon(
-    0% 50%,
-    5% 0%,
-    95% 0%,
-    100% 50%,
-    95% 100%,
-    5% 100%
-  );
   clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
   z-index: 9999;
 }
 .header-logo .line-effect.dark-line {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(transparent),
-    color-stop(var(--line-effect-color-1)),
-    color-stop(var(--line-effect-color-2)),
-    color-stop(var(--line-effect-color-1)),
-    to(transparent)
-  );
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--line-effect-color-1),
-    var(--line-effect-color-2),
-    var(--line-effect-color-1),
-    transparent
-  );
-  -webkit-box-shadow:
-    0 0 10px #0cc2ff,
-    0 0 20px #b2156b;
-  box-shadow:
-    0 0 10px #0cc2ff,
-    0 0 20px #b2156b;
+  background: linear-gradient(to right, transparent, var(--line-effect-color-1), var(--line-effect-color-2), var(--line-effect-color-1), transparent);
+  box-shadow: 0 0 10px #0cc2ff, 0 0 20px #b2156b;
 }
 .header-logo .line-effect.light-line {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(transparent),
-    color-stop(var(--line-effect-color-3)),
-    color-stop(var(--line-effect-color-4)),
-    color-stop(var(--line-effect-color-3)),
-    to(transparent)
-  );
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--line-effect-color-3),
-    var(--line-effect-color-4),
-    var(--line-effect-color-3),
-    transparent
-  );
-  -webkit-box-shadow:
-    0 0 10px #1a1606,
-    0 0 20px #0cc2ff;
-  box-shadow:
-    0 0 10px #1a1606,
-    0 0 20px #0cc2ff;
+  background: linear-gradient(to right, transparent, var(--line-effect-color-3), var(--line-effect-color-4), var(--line-effect-color-3), transparent);
+  box-shadow: 0 0 10px #1a1606, 0 0 20px #0cc2ff;
 }

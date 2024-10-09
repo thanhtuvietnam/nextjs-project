@@ -5,7 +5,7 @@ const nextConfig = {
 
   crossOrigin: 'anonymous', // Thêm thuộc tính crossOrigin
   experimental: {
-    optimizePackageImports: ['package-name'],
+    optimizePackageImports: ['react-icons'],
     turbo: {
       // Bạn có thể thêm các tùy chọn khác ở đây nếu cần
     },

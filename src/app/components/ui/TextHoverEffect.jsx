@@ -11,8 +11,10 @@ export const TextHoverEffect = ({ text, className }) => {
       width="100%"
       height="100%"
       viewBox="0 0 180 50"
+      // viewBox="0 0 100 30"
       xmlns="http://www.w3.org/2000/svg"
       className="select-none"
+      // className="select-none w-full h-full"
     >
       <defs>
         <linearGradient
@@ -77,12 +79,12 @@ export const TextHoverEffect = ({ text, className }) => {
         </linearGradient>
       </defs>
       <motion.text
-        x="45%"
+        x="0"
         y="50%"
-        textAnchor="middle"
+        textAnchor="start"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className={className}
+        className={`${className} responsive-text`}
         initial={{
           strokeDashoffset: 1000,
           strokeDasharray: 1000,

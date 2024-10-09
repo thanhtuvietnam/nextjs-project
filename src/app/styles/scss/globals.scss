@@ -24,6 +24,14 @@ $background-light: #ebfaff;
   --gradient-color-4-light: #d0187d;
   --gradient-color-5-light: #030a1b;
 }
+//layout
+@mixin layout-arrange {
+  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
+}
+.layout-arrange {
+  @include layout-arrange;
+}
+//body
 body {
   font-size: 16px;
   font-weight: 400;
@@ -50,9 +58,6 @@ body {
     --gradient-color-5: var(--gradient-color-5-light);
   }
 }
-@mixin layout-arrange {
-  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
-}
-.layout-arrange {
-  @include layout-arrange;
-}
+
+@import 'navbar.scss';
+@import 'header.scss';

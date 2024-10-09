@@ -1,18 +1,17 @@
 import React from 'react';
 import { TextHoverEffect } from '@/app/components/ui/TextHoverEffect';
-import '@/app/styles/css/header.css';
 import Link from 'next/link';
 import { ThemeToggle, Logo } from '@/app/components/Common/index';
 function Header() {
   return (
     <header className="header">
-      <div className="header-wrapper">
+      <div className="header-wrapper layout-arrange">
         <div className="header-logo">
           <Link href="/" className="flex items-center ">
-            <Logo />
+            <Logo className="p-0 md:w-16 " width={50} height={50} />
             <TextHoverEffect
               text="Cuồng Phim"
-              className="font-bold text-xl xs:text-2xl sm:text-3xl  stroke-[#0cc2ff]"
+              className="font-bold sm:text-base md:text-xl lg:text-2xl stroke-[#0cc2ff] ml-1"
             />
           </Link>
           <div className="line-effect" />

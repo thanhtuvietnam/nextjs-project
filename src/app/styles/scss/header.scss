@@ -1,4 +1,4 @@
-@import 'globals';
+// @import 'globals';
 //dark theme
 $first-color-dark: #0cc2ff;
 $second-color-dark: #b2156b;
@@ -25,10 +25,8 @@ $second-color-light: #0cc2ff;
   position: relative;
 
   &-wrapper {
-    @include layout-arrange;
+    // @include layout-arrange;
     width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,11 +52,10 @@ $second-color-light: #0cc2ff;
     position: relative;
     height: 100%;
     .line-effect {
+      @apply h-0.5 w-2/3 md:w-3/4 lg:w-5/6;
       position: absolute;
-      top: 90%;
+      top: 80%;
       left: 0;
-      width: 100%;
-      height: 2px;
       clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
       z-index: 9999;
 

@@ -14,6 +14,10 @@
   --gradient-color-5-light: #030a1b;
 }
 
+.layout-arrange {
+  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
+}
+
 body {
   font-size: 16px;
   font-weight: 400;
@@ -41,6 +45,72 @@ body.light-mode {
   --gradient-color-5: var(--gradient-color-5-light);
 }
 
-.layout-arrange {
-  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
+.navbar {
+  background: #1a202c;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+:root {
+  --header-bg-color-1: rgba(1, 1, 1, 1) 27%;
+  --header-bg-color-2: rgba(22, 2, 24, 1) 82%;
+  --header-bg-color-3: rgba(9, 30, 81, 1) 100%;
+  --line-effect-color-1: #0cc2ff;
+  --line-effect-color-2: #b2156b;
+  --header-bg-color-4: hsla(197, 14%, 57%, 1) 0%;
+  --header-bg-color-5: hsla(192, 17%, 94%, 1) 100%;
+  --header-bg-color-6: rgba(229, 34, 141, 1) 100%;
+  --line-effect-color-3: #1a1606;
+  --line-effect-color-4: #0cc2ff;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+}
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header.dark-head {
+  background: radial-gradient(circle, var(--header-bg-color-1) 27%, var(--header-bg-color-2) 82%, var(--header-bg-color-3) 100%);
+}
+.header.light-head {
+  background: linear-gradient(90deg, var(--header-bg-color-4), var(--header-bg-color-5));
+}
+.header-logo {
+  position: relative;
+  height: 100%;
+}
+.header-logo .line-effect {
+  @apply h-0.5 w-2/3 md:w-3/4 lg:w-5/6;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+  z-index: 9999;
+}
+.header-logo .line-effect.dark-line {
+  background: linear-gradient(to right, transparent, var(--line-effect-color-1), var(--line-effect-color-2), var(--line-effect-color-1), transparent);
+  box-shadow: 0 0 10px #0cc2ff, 0 0 20px #b2156b;
+}
+.header-logo .line-effect.light-line {
+  background: linear-gradient(to right, transparent, var(--line-effect-color-3), var(--line-effect-color-4), var(--line-effect-color-3), transparent);
+  box-shadow: 0 0 10px #1a1606, 0 0 20px #0cc2ff;
 }
