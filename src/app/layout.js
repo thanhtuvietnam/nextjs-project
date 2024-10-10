@@ -4,6 +4,7 @@ import { StoreProvider } from '@/app/StoreProvider';
 import { Lato } from 'next/font/google';
 import { Header, Navbar, Footer } from '@/app/components/MainParts/index';
 import PropTypes from 'prop-types';
+import { TracingBeam } from './components/ui/TracingBeam';
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,11 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
       <html lang="en">
-        <body className={`antialiased ${lato.className}`}>
+        <body className={`antialiased ${lato.className} min-h-screen`}>
           <Header />
           <Navbar />
-          {children}
-          <Footer />
+          <TracingBeam className={`layout-arrange`}>
+            <main>{children}</main>
+            <Footer />
+          </TracingBeam>
         </body>
       </html>
     </StoreProvider>

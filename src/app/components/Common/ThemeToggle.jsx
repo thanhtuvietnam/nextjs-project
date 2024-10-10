@@ -53,10 +53,10 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={handleToggleTheme}
-      className={clsx({
-        'dark-mode': theme === 'dark',
-        'light-mode': theme === 'light',
-      })}
+      // className={clsx({
+      //   'dark-mode': theme === 'dark',
+      //   'light-mode': theme === 'light',
+      // })}
     >
       {theme === 'light' ? <IoMoon size={30} /> : <IoSunny size={30} />}
     </button>

@@ -1,9 +1,12 @@
+@import 'variables.scss';
 .navbar {
-  background: #1a202c;
-
+  background-color: $navbar-background;
+  border: 0.5px solid $navbar-border;
+  border-radius: 15px;
   padding: 1rem 1.5rem;
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 5px 5px $navbar-background;
   &-container {
     display: flex;
     justify-content: space-between;
@@ -17,4 +20,8 @@
     display: flex;
     gap: 1.5rem;
   }
+  // li a {
+  //   text-decoration: none;
+  //   transition: color 0.3s ease;
+  // }
 }

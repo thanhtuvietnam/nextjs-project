@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-//dark mode
-$foreground-dark: #ebfaff;
-$background-dark: #030a1b;
-//light mode
-$foreground-light: #030a1b;
-$background-light: #ebfaff;
+@import 'variables';
 
 :root {
   // dark theme for text hover effect
@@ -16,20 +11,21 @@ $background-light: #ebfaff;
   --gradient-color-3-dark: #e01082;
   --gradient-color-4-dark: #e5db22;
   --gradient-color-5-dark: #e5228d;
-
-  //light theme for text hover effect
-  --gradient-color-1-light: #090f14;
+  --emerald--500: #00af87;
+  --emerald--600: #00875f,
+    //light theme for text hover effect
+    --gradient-color-1-light: #090f14;
   --gradient-color-2-light: #14252b;
   --gradient-color-3-light: #0cc2ff;
   --gradient-color-4-light: #d0187d;
   --gradient-color-5-light: #030a1b;
 }
 //layout
-@mixin layout-arrange {
-  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
-}
+// @mixin layout-arrange {
+// }
 .layout-arrange {
-  @include layout-arrange;
+  @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
+  // @include layout-arrange;
 }
 //body
 body {
@@ -47,6 +43,8 @@ body {
     --gradient-color-3: var(--gradient-color-3-dark);
     --gradient-color-4: var(--gradient-color-4-dark);
     --gradient-color-5: var(--gradient-color-5-dark);
+    --emerald-500: var(--emerald--500);
+    --emerald-600: var(--emerald-600);
   }
   &.light-mode {
     background-color: $background-light;
@@ -61,3 +59,10 @@ body {
 
 @import 'navbar.scss';
 @import 'header.scss';
+
+// //dark mode
+// $foreground-dark: #ebfaff;
+// $background-dark: #030a1b;
+// //light mode
+// $foreground-light: #030a1b;
+// $background-light: #ebfaff;

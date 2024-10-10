@@ -1,7 +1,7 @@
-import React from 'react';
+import { Logo, ThemeToggle } from '@/app/components/Common/index';
 import { TextHoverEffect } from '@/app/components/ui/TextHoverEffect';
 import Link from 'next/link';
-import { ThemeToggle, Logo } from '@/app/components/Common/index';
+import React from 'react';
 function Header() {
   return (
     <header className="header">

@@ -1,31 +1,10 @@
-// @import 'globals';
-//dark theme
-$first-color-dark: #0cc2ff;
-$second-color-dark: #b2156b;
-//light theme
-$first-color-light: #1a1606;
-$second-color-light: #0cc2ff;
-:root {
-  //Dark theme
-  --header-bg-color-1: rgba(1, 1, 1, 1) 27%;
-  --header-bg-color-2: rgba(22, 2, 24, 1) 82%;
-  --header-bg-color-3: rgba(9, 30, 81, 1) 100%;
-  --line-effect-color-1: #{$first-color-dark};
-  --line-effect-color-2: #{$second-color-dark};
-  //Light theme
-  --header-bg-color-4: hsla(197, 14%, 57%, 1) 0%;
-  --header-bg-color-5: hsla(192, 17%, 94%, 1) 100%;
-  --header-bg-color-6: rgba(229, 34, 141, 1) 100%;
-  --line-effect-color-3: #{$first-color-light};
-  --line-effect-color-4: #{$second-color-light};
-}
+@import 'variables';
 
 .header {
   width: 100%;
   position: relative;
 
   &-wrapper {
-    // @include layout-arrange;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -35,17 +14,17 @@ $second-color-light: #0cc2ff;
   &.dark-head {
     background: radial-gradient(
       circle,
-      var(--header-bg-color-1) 27%,
-      var(--header-bg-color-2) 82%,
-      var(--header-bg-color-3) 100%
+      $header-bg-color-dark-1,
+      $header-bg-color-dark-2,
+      $header-bg-color-dark-3
     );
   }
   //Light theme
   &.light-head {
     background: linear-gradient(
       90deg,
-      var(--header-bg-color-4),
-      var(--header-bg-color-5)
+      $header-bg-color-light-1,
+      $header-bg-color-light-2
     );
   }
   &-logo {
@@ -63,28 +42,49 @@ $second-color-light: #0cc2ff;
         background: linear-gradient(
           to right,
           transparent,
-          var(--line-effect-color-1),
-          var(--line-effect-color-2),
-          var(--line-effect-color-1),
+          $line-effect-color-dark-1,
+          $line-effect-color-dark-2,
+          $line-effect-color-dark-1,
           transparent
         );
         box-shadow:
-          0 0 10px $first-color-dark,
-          0 0 20px $second-color-dark;
+          0 0 10px $line-effect-color-dark-1,
+          0 0 20px $line-effect-color-dark-2;
       }
       &.light-line {
         background: linear-gradient(
           to right,
           transparent,
-          var(--line-effect-color-3),
-          var(--line-effect-color-4),
-          var(--line-effect-color-3),
+          $line-effect-color-light-1,
+          $line-effect-color-light-2,
+          $line-effect-color-light-1,
           transparent
         );
         box-shadow:
-          0 0 10px $first-color-light,
-          0 0 20px $second-color-light;
+          0 0 10px $line-effect-color-light-1,
+          0 0 20px $line-effect-color-light-2;
       }
     }
   }
 }
+
+// //dark theme
+// $first-color-dark: #0cc2ff;
+// $second-color-dark: #b2156b;
+// //light theme
+// $first-color-light: #1a1606;
+// $second-color-light: #0cc2ff;
+// :root {
+//   //Dark theme
+//   --header-bg-color-1: rgba(1, 1, 1, 1) 27%;
+//   --header-bg-color-2: rgba(22, 2, 24, 1) 82%;
+//   --header-bg-color-3: rgba(9, 30, 81, 1) 100%;
+//   --line-effect-color-1: #{$first-color-dark};
+//   --line-effect-color-2: #{$second-color-dark};
+//   //Light theme
+//   --header-bg-color-4: hsla(197, 14%, 57%, 1) 0%;
+//   --header-bg-color-5: hsla(192, 17%, 94%, 1) 100%;
+//   --header-bg-color-6: rgba(229, 34, 141, 1) 100%;
+//   --line-effect-color-3: #{$first-color-light};
+//   --line-effect-color-4: #{$second-color-light};
+// }

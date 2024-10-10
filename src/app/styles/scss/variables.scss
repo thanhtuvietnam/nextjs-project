@@ -1,0 +1,28 @@
+//BODY
+//dark mode
+$foreground-dark: #ebfaff;
+$background-dark: #030a1b;
+//light mode
+$foreground-light: #030a1b;
+$background-light: #ebfaff;
+
+//HEADER
+//background dark
+$header-bg-color-dark-1: rgba(1, 1, 1, 1) 27%;
+$header-bg-color-dark-2: rgba(22, 2, 24, 1) 82%;
+$header-bg-color-dark-3: rgba(9, 30, 81, 1) 100%;
+//dark theme line effect
+$line-effect-color-dark-1: #0cc2ff;
+$line-effect-color-dark-2: #b2156b;
+
+//background light
+$header-bg-color-light-1: hsla(197, 14%, 57%, 1) 0%;
+$header-bg-color-light-2: hsla(192, 17%, 94%, 1) 100%;
+$header-bg-color-light-3: rgba(229, 34, 141, 1) 100%;
+//light theme line effect
+$line-effect-color-light-1: #1a1606;
+$line-effect-color-light-2: #0cc2ff;
+
+//NAVBAR
+$navbar-background: rgba(26, 32, 44, 0.8);
+$navbar-border: #1f81cf;
