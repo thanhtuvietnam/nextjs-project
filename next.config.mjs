@@ -10,6 +10,9 @@ const nextConfig = {
   },
   crossOrigin: 'anonymous', // Thêm thuộc tính crossOrigin
   experimental: {
+    // staleTimes: {
+    //   dynamic: 0,
+    // },
     optimizePackageImports: ['react-icons'],
     turbo: {
       // Bạn có thể thêm các tùy chọn khác ở đây nếu cần

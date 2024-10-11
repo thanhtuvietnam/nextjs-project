@@ -20,8 +20,18 @@
     display: flex;
     gap: 1.5rem;
   }
-  // li a {
-  //   text-decoration: none;
-  //   transition: color 0.3s ease;
-  // }
+  &-submenu {
+    position: relative;
+    cursor: pointer;
+    &-item {
+      // background: black;
+      position: absolute;
+      top: 3rem;
+      z-index: 9999;
+      display: grid;
+      width: 24rem;
+      // height: 1.25rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 }

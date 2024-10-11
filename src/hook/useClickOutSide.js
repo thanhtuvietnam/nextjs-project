@@ -1,26 +1,37 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 
-const useClickOutSide = (addtionalRefs = [], mouseAction = '') => {
-  const [isOpen, setIsOpen] = useState(null);
-  const dropdownRef = useRef();
-  const toggleDropdown = useCallback(ev => {
-    setIsOpen(ev);
-  }, []);
-  const closeDropdown = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+const DEFAULT_EVENTS = ['mousedown', 'touchstart'];
+
+function useClickOutside(handler, events, nodes) {
+  const ref = useRef();
+
   useEffect(() => {
-    const handleClickOutside = e => {
-      const refs = [dropdownRef, ...addtionalRefs];
-      if (refs.every(ref => ref.current && !ref.current.contains(e.target))) {
-        closeDropdown();
+    const listener = event => {
+      const { target } = event ?? {};
+      if (Array.isArray(nodes)) {
+        const shouldIgnore =
+          target?.hasAttribute('data-ignore-outside-clicks') ||
+          (!document.body.contains(target) && target.tagName !== 'HTML');
+        const shouldTrigger = nodes.every(
+          node => !!node && !event.composedPath().includes(node)
+        );
+        shouldTrigger && !shouldIgnore && handler();
+      } else if (ref.current && !ref.current.contains(target)) {
+        handler();
       }
     };
-    document.addEventListener(mouseAction, handleClickOutside);
+
+    (events || DEFAULT_EVENTS).forEach(fn =>
+      document.addEventListener(fn, listener)
+    );
+
     return () => {
-      document.removeEventListener(mouseAction, handleClickOutside);
+      (events || DEFAULT_EVENTS).forEach(fn =>
+        document.removeEventListener(fn, listener)
+      );
     };
-  }, [addtionalRefs, mouseAction, closeDropdown]);
-  return { isOpen, toggleDropdown, closeDropdown, dropdownRef };
-};
-export default useClickOutSide;
+  }, [ref, handler, nodes]);
+
+  return ref;
+}
+export default useClickOutside;

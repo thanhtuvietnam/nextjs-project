@@ -1,85 +1,87 @@
 'use client';
-import { DropDown } from '@/app/components/Common/index';
-import useClickOutside from '@/hook/useClickOutSide';
-import { convertToSlug } from '@/lib/utils';
-import { navLists } from '@/utils/constants';
+import { Dropdown } from '@/app/components/Common/index';
+import { useClickOutside, useHover, useToggle } from '@/hook/index';
+import { cn, convertToSlug } from '@/lib/utils';
+import { navBarItems } from '@/utils/constants';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 function Navbar() {
+  //variable
+  const navListSlug = useMemo(
+    () => navBarItems?.navLists?.map(convertToSlug),
+    []
+  );
+
+  //hook
   const router = useRouter();
-  const navBarRef = useRef();
-  const {
-    isOpen: isOpenNav,
-    toggleDropdown: toggleDropdownNav,
-    dropdownRef: dropdownRefNav,
-    closeDropdown: closeDropdownNav,
-  } = useClickOutside([navBarRef], 'mousedown');
-
-  const navListSlug = useMemo(() => navLists.map(convertToSlug), []);
+  const { isOpen: openSubmenu, toggleItems: toggleItemSubmenu } =
+    useToggle(null);
+  const { ref: subMenuHoverRef, hovered: hoveredSubmenu } = useHover();
+  const ref = useClickOutside(() => toggleItemSubmenu(false), ['mousedown']);
   // console.log(navListSlug);
+
+  //function
   //onclick for first 5 index;
-  const handleItemClick = useCallback(() => {
-    console.log('handle itemclick');
+  const handleItemClick = useCallback(item => {
+    console.log(`Clicked on ${item}`);
   }, []);
-  const handleClick = useCallback(navList => {
-    toggleDropdownNav(navList);
-  }, []);
+  //handle for theloai && quocgia
 
-  const genres = ['Hành động', 'Tình cảm', 'Hài hước'];
-  const countries = ['Mỹ', 'Hàn Quốc', 'Nhật Bản'];
+  const handleSubmenu = useCallback(
+    navList => {
+      toggleItemSubmenu(navList);
+    },
+    [toggleItemSubmenu]
+  );
 
-  const renderItem = useCallback((item, index, onItemClick) => {
-    return (
-      <Link
-        href={`/${convertToSlug(item)} `}
-        onClick={() => {
-          onItemClick && onItemClick(item);
-        }}
-      >
-        {item}
-      </Link>
-    );
-  }, []);
+  const renderDropdown = useCallback(
+    (index, navList) => {
+      if (openSubmenu === navList) {
+        return (
+          <Dropdown
+            className={cn('navbar-submenu-item')}
+            navList={navList}
+            hrefNav={navListSlug[index]}
+          />
+        );
+      }
+      return null;
+    },
+    [openSubmenu, navListSlug]
+  );
 
   return (
     <>
-      <nav className="navbar layout-arrange">
+      <nav className="navbar layout-arrange " ref={ref}>
         {/* Desktop Navigation */}
         <div className="navbar-container">
           <div className="navbar-left">
             <ul className="navbar-links">
-              {navLists.map((navList, index) => (
+              {navBarItems?.navLists?.map((navList, index) => (
                 <li key={index}>
                   {navList === 'THỂ LOẠI' || navList === 'QUỐC GIA' ? (
-                    <div
-                      className={`cursor-pointer`}
-                      // onMouseEnter={() => toggleDropdownNav(navList)}
-                      // onMouseLeave={() => closeDropdownNav(navList)}
-                      onClick={() => handleClick(navList)}
-                    >
-                      {navList}
+                    <div className={cn('navbar-submenu')}>
+                      <button onClick={() => handleSubmenu(navList)}>
+                        {navList}
+                      </button>
+                      {renderDropdown(index, navList)}
                     </div>
                   ) : (
                     <Link
-                      href={`/${navListSlug[index]}`}
-                      onClick={handleItemClick}
+                      href={`${navListSlug[index]}`}
+                      onClick={() => handleItemClick(navList)}
                     >
                       {navList}
                     </Link>
                   )}
-                  {isOpenNav === navList && (
-                    <DropDown
-                      items={navList === 'THỂ LOẠI' ? genres : countries}
-                      // dropdownRef={dropdownRefNav}
-                      renderItem={renderItem}
-                      // isVisible={}
-                    />
-                  )}
                 </li>
               ))}
             </ul>
+          </div>
+          <div ref={subMenuHoverRef}>
+            {hoveredSubmenu ? 'I am hovered' : 'Put mouse over me please'}
           </div>
           <div className="navbar-right">navbar-right</div>
         </div>
@@ -89,31 +91,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-{
-  /* <Button */
-}
-{
-  /*   borderRadius="2rem" */
-}
-{
-  /*   containerClassName="w-64" */
-}
-{
-  /*   borderClassName="bg-gradient-to-r from-purple-500 to-blue-500" */
-}
-{
-  /*   duration={3000} */
-}
-{
-  /*   className="text-lg font-bold" */
-}
-{
-  /* > */
-}
-{
-  /*   Custom Moving Border Button */
-}
-{
-  /* </Button> */
-}
