@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useClickOutSide } from '.';
 
 const DEFAULT_EVENTS = ['mousedown', 'touchstart'];
 

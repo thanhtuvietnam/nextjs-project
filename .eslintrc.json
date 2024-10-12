@@ -5,14 +5,12 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier"], // Thêm dòng này
   "rules": {
-    "prettier/prettier": "error" // Bắt lỗi nếu mã không được định dạng đúng
-    // Các quy tắc khác của bạn
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": {
-      "version": "detect" // Tự động phát hiện phiên bản React
+      "version": "detect"
     }
   }
 }

@@ -24,9 +24,10 @@
     position: relative;
     cursor: pointer;
     &-item {
+      background: gray;
       // background: black;
       position: absolute;
-      top: 3rem;
+      top: 2.7rem;
       z-index: 9999;
       display: grid;
       width: 24rem;

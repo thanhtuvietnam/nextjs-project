@@ -4,7 +4,7 @@ function useToggle(initialState) {
   const [isOpen, setIsOpen] = useState(initialState || false);
 
   const toggleState = useCallback(() => {
-    setIsOpen(prev => !prev);
+    setIsOpen(true);
   }, []);
   const toggleItems = useCallback(
     items => {

@@ -18,6 +18,9 @@ const nextConfig = {
       // Bạn có thể thêm các tùy chọn khác ở đây nếu cần
     },
   },
+  images: {
+    domains: ['assets.aceternity.com'],
+  },
 };
 
 export default nextConfig;

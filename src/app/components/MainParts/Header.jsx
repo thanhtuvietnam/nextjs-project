@@ -7,11 +7,11 @@ function Header() {
     <header className="header">
       <div className="header-wrapper layout-arrange">
         <div className="header-logo">
-          <Link href="/" className="flex items-center ">
-            <Logo className="p-0 md:w-16 " width={50} height={50} />
+          <Link href="/" className="flex items-center">
+            <Logo className="p-0 md:w-16" width={50} height={50} />
             <TextHoverEffect
               text="Cuồng Phim"
-              className="font-bold sm:text-base md:text-xl lg:text-2xl stroke-[#0cc2ff] ml-1"
+              className="ml-1 stroke-[#0cc2ff] font-bold sm:text-base md:text-xl lg:text-2xl"
             />
           </Link>
           <div className="line-effect" />
