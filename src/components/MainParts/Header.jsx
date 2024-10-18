@@ -1,5 +1,5 @@
-import { Logo, ThemeToggle } from '@/app/components/Common/index';
-import { TextHoverEffect } from '@/app/components/ui/TextHoverEffect';
+import { Logo, ThemeToggle } from '@/components/Common/index';
+import { TextHoverEffect } from '@/components/ui/TextHoverEffect';
 import Link from 'next/link';
 import React from 'react';
 function Header() {

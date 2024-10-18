@@ -1,10 +1,10 @@
-import React from 'react';
-import './styles/css/globals.css';
 import { StoreProvider } from '@/app/StoreProvider';
+import { Footer, Header, Navbar } from '@/components/MainParts/index';
+import { TracingBeam } from '@/components/ui/TracingBeam';
+import '@/styles/css/globals.css';
 import { Lato } from 'next/font/google';
-import { Header, Navbar, Footer } from '@/app/components/MainParts/index';
 import PropTypes from 'prop-types';
-import { TracingBeam } from './components/ui/TracingBeam';
+import React from 'react';
 
 export const metadata = {
   title: 'Create Next App',

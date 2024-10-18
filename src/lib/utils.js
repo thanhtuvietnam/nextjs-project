@@ -7,7 +7,7 @@ export function cn(...inputs) {
 
 export const convertToSlug = text => {
   if (text === 'TRANG CHỦ') {
-    return '/';
+    return '';
   } else {
     return text
       .toString()

@@ -13,7 +13,7 @@ function useToggle(initialState) {
     [isOpen]
   );
 
-  return { isOpen, toggleState, toggleItems };
+  return { isOpen, toggleState, toggleItems, setIsOpen };
 }
 
 export default useToggle;

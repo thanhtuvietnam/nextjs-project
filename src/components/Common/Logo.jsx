@@ -19,6 +19,7 @@ const Logo = ({ width, height, className }) => {
         width={width}
         height={height}
         className={className}
+        quality={100}
         // priority={true}
       />
     </>

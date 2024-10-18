@@ -1,0 +1,75 @@
+@import 'variables.scss';
+.navbar {
+  top: 5px;
+  // position: relative;
+  position: sticky;
+  top: 0;
+  background-color: $navbar-background;
+  border: 0.5px solid $navbar-border;
+  border-radius: 1rem;
+  // padding: 1rem 1.5rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px 5px $navbar-background;
+  z-index: 1000;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    // border-radius: 5rem;
+    // background: #000;
+  }
+  &-left {
+    cursor: pointer;
+  }
+  &-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  &-submenu {
+    position: absolute;
+    left: 0%;
+    // box-shadow: 0 0 5px 5px $navbar-background;
+    // border-radius: 1rem;
+    // top: 50%;
+    top: calc(100% + 1.4rem);
+    // top: calc(100% + 1.8rem);
+    // z-index: 1000;
+    &-item {
+      overflow: hidden;
+      background: $navbar-background;
+      border-width: 0.5px;
+      border-radius: 1rem;
+      border-color: $navbar-border;
+
+      &-subitem {
+        // cursor: pointer;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+      }
+    }
+  }
+  .menu-item {
+    position: relative; /* Để định vị pseudo-element */
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0%; /* Bắt đầu từ giữa */
+      bottom: 0; /* Đặt ở dưới cùng */
+      width: 0; /* Chiều rộng ban đầu là 0 */
+      height: 3px; /* Chiều cao của border */
+      background-color: $navbar-border; /* Màu border */
+      transition:
+        width 0.3s ease,
+        left 0.3s ease; /* Hiệu ứng chuyển tiếp */
+    }
+
+    &:hover::after {
+      width: 100%; /* Mở rộng chiều rộng thành 100% */
+      left: 0; /* Đặt lại vị trí sang trái */
+    }
+  }
+}

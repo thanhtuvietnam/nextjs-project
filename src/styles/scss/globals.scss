@@ -12,9 +12,9 @@
   --gradient-color-4-dark: #e5db22;
   --gradient-color-5-dark: #e5228d;
   --emerald--500: #00af87;
-  --emerald--600: #00875f,
-    //light theme for text hover effect
-    --gradient-color-1-light: #090f14;
+  --emerald--600: #00875f;
+  //light theme for text hover effect
+  --gradient-color-1-light: #090f14;
   --gradient-color-2-light: #14252b;
   --gradient-color-3-light: #0cc2ff;
   --gradient-color-4-light: #d0187d;
@@ -25,7 +25,6 @@
 // }
 .layout-arrange {
   @apply mx-auto max-w-7xl px-1 min-[425px]:px-1.5 sm:px-2 md:px-2.5;
-  // @include layout-arrange;
 }
 //body
 body {

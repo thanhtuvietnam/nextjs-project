@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +9,8 @@
   --gradient-color-4-dark: #e5db22;
   --gradient-color-5-dark: #e5228d;
   --emerald--500: #00af87;
-  --emerald--600: #00875f,
-    //light theme for text hover effect
-    --gradient-color-1-light: #090f14;
+  --emerald--600: #00875f;
+  --gradient-color-1-light: #090f14;
   --gradient-color-2-light: #14252b;
   --gradient-color-3-light: #0cc2ff;
   --gradient-color-4-light: #d0187d;
@@ -51,39 +51,63 @@ body.light-mode {
 }
 
 .navbar {
+  top: 5px;
+  position: sticky;
+  top: 0;
   background-color: rgba(26, 32, 44, 0.8);
   border: 0.5px solid #1f81cf;
-  border-radius: 15px;
-  padding: 1rem 1.5rem;
+  border-radius: 1rem;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 5px 5px rgba(26, 32, 44, 0.8);
+  z-index: 1000;
 }
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 1.5rem;
 }
 .navbar-left {
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 }
 .navbar-links {
   display: flex;
   gap: 1.5rem;
 }
 .navbar-submenu {
-  position: relative;
-  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: calc(100% + 1.4rem);
 }
 .navbar-submenu-item {
-  background: gray;
-  position: absolute;
-  top: 2.7rem;
-  z-index: 9999;
+  overflow: hidden;
+  background: rgba(26, 32, 44, 0.8);
+  border-width: 0.5px;
+  border-radius: 1rem;
+  border-color: #1f81cf;
+}
+.navbar-submenu-item-subitem {
   display: grid;
-  width: 24rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.navbar .menu-item {
+  position: relative; /* Để định vị pseudo-element */
+}
+.navbar .menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0%; /* Bắt đầu từ giữa */
+  bottom: 0; /* Đặt ở dưới cùng */
+  width: 0; /* Chiều rộng ban đầu là 0 */
+  height: 3px; /* Chiều cao của border */
+  background-color: #1f81cf; /* Màu border */
+  transition: width 0.3s ease, left 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+.navbar .menu-item:hover::after {
+  width: 100%; /* Mở rộng chiều rộng thành 100% */
+  left: 0; /* Đặt lại vị trí sang trái */
 }
 
 .header {
@@ -97,19 +121,10 @@ body.light-mode {
   align-items: center;
 }
 .header.dark-head {
-  background: radial-gradient(
-    circle,
-    rgb(1, 1, 1) 27%,
-    rgb(22, 2, 24) 82%,
-    rgb(9, 30, 81) 100%
-  );
+  background: radial-gradient(circle, rgb(1, 1, 1) 27%, rgb(22, 2, 24) 82%, rgb(9, 30, 81) 100%);
 }
 .header.light-head {
-  background: linear-gradient(
-    90deg,
-    hsl(197, 14%, 57%) 0%,
-    hsl(192, 17%, 94%) 100%
-  );
+  background: linear-gradient(90deg, hsl(197, 14%, 57%) 0%, hsl(192, 17%, 94%) 100%);
 }
 .header-logo {
   position: relative;
@@ -121,31 +136,12 @@ body.light-mode {
   top: 80%;
   left: 0;
   clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
-  z-index: 9999;
 }
 .header-logo .line-effect.dark-line {
-  background: linear-gradient(
-    to right,
-    transparent,
-    #0cc2ff,
-    #b2156b,
-    #0cc2ff,
-    transparent
-  );
-  box-shadow:
-    0 0 10px #0cc2ff,
-    0 0 20px #b2156b;
+  background: linear-gradient(to right, transparent, #0cc2ff, #b2156b, #0cc2ff, transparent);
+  box-shadow: 0 0 10px #0cc2ff, 0 0 20px #b2156b;
 }
 .header-logo .line-effect.light-line {
-  background: linear-gradient(
-    to right,
-    transparent,
-    #1a1606,
-    #0cc2ff,
-    #1a1606,
-    transparent
-  );
-  box-shadow:
-    0 0 10px #1a1606,
-    0 0 20px #0cc2ff;
+  background: linear-gradient(to right, transparent, #1a1606, #0cc2ff, #1a1606, transparent);
+  box-shadow: 0 0 10px #1a1606, 0 0 20px #0cc2ff;
 }

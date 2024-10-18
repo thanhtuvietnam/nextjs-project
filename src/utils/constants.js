@@ -8,7 +8,7 @@ export const navBarItems = {
     'THỂ LOẠI',
     'QUỐC GIA',
   ],
-  theLoai: [
+  'THỂ LOẠI': [
     'Hành Động',
     'Tình Cảm',
     'Hài Hước',
@@ -32,7 +32,7 @@ export const navBarItems = {
     'Kinh Điển',
     'Phim 18+',
   ],
-  quocGia: [
+  'QUỐC GIA': [
     'Trung Quốc',
     'Hàn Quốc',
     'Nhật Bản',

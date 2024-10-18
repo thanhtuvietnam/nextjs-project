@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  position: relative;
+}
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header.dark-head {
+  background: radial-gradient(circle, rgb(1, 1, 1) 27%, rgb(22, 2, 24) 82%, rgb(9, 30, 81) 100%);
+}
+.header.light-head {
+  background: linear-gradient(90deg, hsl(197, 14%, 57%) 0%, hsl(192, 17%, 94%) 100%);
+}
+.header-logo {
+  position: relative;
+  height: 100%;
+}
+.header-logo .line-effect {
+  @apply h-0.5 w-2/3 md:w-3/4 lg:w-5/6;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+}
+.header-logo .line-effect.dark-line {
+  background: linear-gradient(to right, transparent, #0cc2ff, #b2156b, #0cc2ff, transparent);
+  box-shadow: 0 0 10px #0cc2ff, 0 0 20px #b2156b;
+}
+.header-logo .line-effect.light-line {
+  background: linear-gradient(to right, transparent, #1a1606, #0cc2ff, #1a1606, transparent);
+  box-shadow: 0 0 10px #1a1606, 0 0 20px #0cc2ff;
+}
