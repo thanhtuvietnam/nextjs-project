@@ -1,13 +1,13 @@
-export const navBarItems = {
-  navLists: [
-    'TRANG CHỦ',
-    'PHIM BỘ',
-    'PHIM LẺ',
-    'TV SHOWS',
-    'HOẠT HÌNH',
-    'THỂ LOẠI',
-    'QUỐC GIA',
-  ],
+export const tabs = [
+  'TRANG CHỦ',
+  'PHIM BỘ',
+  'PHIM LẺ',
+  'TV SHOWS',
+  'HOẠT HÌNH',
+  'THỂ LOẠI',
+  'QUỐC GIA',
+];
+export const subMenus = {
   'THỂ LOẠI': [
     'Hành Động',
     'Tình Cảm',

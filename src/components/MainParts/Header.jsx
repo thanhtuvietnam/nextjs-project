@@ -1,7 +1,7 @@
 import { Logo, ThemeToggle } from '@/components/Common/index';
-import { TextHoverEffect } from '@/components/ui/TextHoverEffect';
 import Link from 'next/link';
 import React from 'react';
+import { TextHoverEffect } from '../Ui/SideEffect/TextHoverEffect';
 function Header() {
   return (
     <header className="header">

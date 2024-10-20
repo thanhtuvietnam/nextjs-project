@@ -1,75 +1,97 @@
 @import 'variables.scss';
 .navbar {
-  top: 5px;
-  // position: relative;
-  position: sticky;
-  top: 0;
   background-color: $navbar-background;
   border: 0.5px solid $navbar-border;
-  border-radius: 1rem;
-  // padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  padding: 0.375rem;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 5px 5px $navbar-background;
-  z-index: 1000;
+  // z-index: 1000;
   &-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    // border-radius: 5rem;
-    // background: #000;
+    width: 100%;
   }
   &-left {
     cursor: pointer;
+    // width: 80%;
+    // border-radius: 9999px;
+  }
+  &-right {
+    // width: 20%;
+    padding: 1.25rem;
+    white-space: nowrap;
   }
   &-links {
     display: flex;
-    gap: 1.5rem;
+    position: relative;
+    width: 100%;
+    // width: fit-content;
+    // border: 1px solid white;
+    border-radius: 9999px;
+    // padding: 0.375rem;
+    white-space: nowrap;
+    // justify-content: space-between;
+    // align-items: center;
+    gap: 1rem;
   }
   &-submenu {
     position: absolute;
-    left: 0%;
-    // box-shadow: 0 0 5px 5px $navbar-background;
-    // border-radius: 1rem;
-    // top: 50%;
+    // left: 0;
+    // right: 0%;
     top: calc(100% + 1.4rem);
-    // top: calc(100% + 1.8rem);
-    // z-index: 1000;
-    &-item {
-      overflow: hidden;
-      background: $navbar-background;
-      border-width: 0.5px;
-      border-radius: 1rem;
-      border-color: $navbar-border;
+    z-index: 1000;
+    width: 50%;
+    padding: 0.375rem;
+    background: $navbar-background;
+    border: $navbar-border 1px solid;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    // gap: 1rem;
+    // overflow: hidden;
+    box-shadow: 0 0 5px 5px $navbar-background;
+    // &-item {
+    //   background: $navbar-background;
+    //   border-width: 0.5px;
+    //   border-radius: 1rem;
+    //   border-color: $navbar-border;
 
-      &-subitem {
-        // cursor: pointer;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.5rem;
-      }
+    &-subitem {
+      padding: 0.5rem 1rem;
     }
+    // }
   }
-  .menu-item {
-    position: relative; /* Để định vị pseudo-element */
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0%; /* Bắt đầu từ giữa */
-      bottom: 0; /* Đặt ở dưới cùng */
-      width: 0; /* Chiều rộng ban đầu là 0 */
-      height: 3px; /* Chiều cao của border */
-      background-color: $navbar-border; /* Màu border */
-      transition:
-        width 0.3s ease,
-        left 0.3s ease; /* Hiệu ứng chuyển tiếp */
-    }
-
-    &:hover::after {
-      width: 100%; /* Mở rộng chiều rộng thành 100% */
-      left: 0; /* Đặt lại vị trí sang trái */
-    }
+  .cursor {
+    position: absolute;
+    z-index: 0;
+    border-radius: 9999px;
+    background-color: #65d9ff;
+    opacity: 0.3;
+    mix-blend-mode: difference;
   }
+  // .menu-item {
+  //   position: relative; /* Để định vị pseudo-element */
+  //
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     left: 0%; /* Bắt đầu từ giữa */
+  //     bottom: 0; /* Đặt ở dưới cùng */
+  //     width: 0; /* Chiều rộng ban đầu là 0 */
+  //     height: 3px; /* Chiều cao của border */
+  //     background-color: $navbar-border; /* Màu border */
+  //     transition:
+  //       width 0.3s ease,
+  //       left 0.3s ease; /* Hiệu ứng chuyển tiếp */
+  //   }
+  //
+  //   &:hover::after {
+  //     width: 100%; /* Mở rộng chiều rộng thành 100% */
+  //     left: 0; /* Đặt lại vị trí sang trái */
+  //   }
+  // }
 }
