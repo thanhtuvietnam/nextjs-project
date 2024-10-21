@@ -39,33 +39,33 @@ export const TracingBeam = ({ children, className }) => {
     <motion.div ref={ref} className={cn('relative h-full w-full', className)}>
       {/* <div className="absolute -left-4 md:-left-20 top-3"> */}
       <div className="absolute -left-5 top-0 2xl:-left-6">
-        {/* <motion.div */}
-        {/*   transition={{ */}
-        {/*     duration: 0.2, */}
-        {/*     delay: 0.5, */}
-        {/*   }} */}
-        {/*   animate={{ */}
-        {/*     boxShadow: */}
-        {/*       scrollYProgress.get() > 0 */}
-        {/*         ? 'none' */}
-        {/*         : 'rgba(0, 0, 0, 0.24) 0px 3px 8px', */}
-        {/*   }} */}
-        {/*   className="ml-[15px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center" */}
-        {/* > */}
-        {/*   <motion.div */}
-        {/*     transition={{ */}
-        {/*       duration: 0.2, */}
-        {/*       delay: 0.5, */}
-        {/*     }} */}
-        {/*     animate={{ */}
-        {/*       backgroundColor: */}
-        {/*         scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-500)', */}
-        {/*       borderColor: */}
-        {/*         scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-600)', */}
-        {/*     }} */}
-        {/*     className="h-2 w-2  rounded-full border border-neutral-300 bg-white" */}
-        {/*   /> */}
-        {/* </motion.div> */}
+        <motion.div
+          transition={{
+            duration: 0.2,
+            delay: 0.5,
+          }}
+          animate={{
+            boxShadow:
+              scrollYProgress.get() > 0
+                ? 'none'
+                : 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+          }}
+          // className="border-netural-200 ml-[15px] flex h-4 w-4 items-center justify-center rounded-full border shadow-sm"
+        >
+          <motion.div
+            transition={{
+              duration: 0.2,
+              delay: 0.5,
+            }}
+            animate={{
+              backgroundColor:
+                scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-500)',
+              borderColor:
+                scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-600)',
+            }}
+            // className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
+          />
+        </motion.div>
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"

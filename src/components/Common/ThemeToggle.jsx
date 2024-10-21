@@ -27,6 +27,7 @@ const ThemeToggle = () => {
 
   const applyTheme = currentTheme => {
     if (typeof document !== 'undefined') {
+      //normal css way
       document.body.classList.remove('light-mode', 'dark-mode');
       document.body.classList.add(`${currentTheme}-mode`);
 
@@ -40,6 +41,12 @@ const ThemeToggle = () => {
         lineEffect.classList.remove('light-line', 'dark-line');
         lineEffect.classList.add(`${currentTheme}-line`);
       }
+      //tailwindcss way
+      if (currentTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
   };
 
@@ -51,13 +58,7 @@ const ThemeToggle = () => {
   if (!mounted) return null;
 
   return (
-    <button
-      onClick={handleToggleTheme}
-      // className={clsx({
-      //   'dark-mode': theme === 'dark',
-      //   'light-mode': theme === 'light',
-      // })}
-    >
+    <button onClick={handleToggleTheme}>
       {theme === 'light' ? <IoMoon size={30} /> : <IoSunny size={30} />}
     </button>
   );

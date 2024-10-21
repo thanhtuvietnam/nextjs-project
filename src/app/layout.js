@@ -1,6 +1,8 @@
 import { StoreProvider } from '@/app/StoreProvider';
 import { Footer, Header, Navbar } from '@/components/MainParts/index';
-import '@/styles/css/globals.css';
+// import '@/styles/css/globals.css';
+import '../styles/css/globals.css';
+
 import { Lato } from 'next/font/google';
 import PropTypes from 'prop-types';
 import React, { Suspense } from 'react';
